@@ -33,6 +33,9 @@ setwd(paste("./", dataDir, sep=""))
 par.defaults <- par(no.readonly=TRUE);
 save(par.defaults, file="R.default.par.RData")
 
+# Set plot window parameters:
+par(mfrow=c(2,2),width=480, height= 480)
+
 # If file doesn't exist then download: 
 if (!file.exists(dataFile))
 {
@@ -53,9 +56,6 @@ library(lubridate)
 
 # Add a new column with date/time combination:
 data$DateTime <- dmy_hms(paste(data$Date, data$Time))
-
-# Put four plots on the window:
-par(mfrow=c(2,2)) 
 
 # Generate the graphs:
 

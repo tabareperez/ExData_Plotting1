@@ -33,6 +33,9 @@ setwd(paste("./", dataDir, sep=""))
 par.defaults <- par(no.readonly=TRUE);
 save(par.defaults, file="R.default.par.RData")
 
+# Set plot window parameters:
+par(mfrow=c(1,1),width=480, height= 480)
+
 # If file doesn't exist then download: 
 if (!file.exists(dataFile)){
   download.file(dataURL, destfile = dataFile)
